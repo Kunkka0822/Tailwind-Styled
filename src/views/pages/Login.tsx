@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../components/header';
+import Hero from '../components/hero';
 
 const Login = () => {
 	return (
-		<Header/>
+		<div className='pt-8'>
+			<Hero/>
+		</div>
 	)
 }
 

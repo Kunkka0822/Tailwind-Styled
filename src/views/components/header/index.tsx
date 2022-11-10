@@ -1,45 +1,51 @@
 import React from 'react';
 import tw from "tailwind-styled-components"
-import logo from '../../../assets/images/logo.svg';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
 import useAnimatedNavToggler from "../../../helpers/useAnimatedNavToggler";
 
+import logo from '../../../assets/images/logo.svg';
+import { ReactComponent as MenuIcon } from "feather-icons/dist/icons/menu.svg";
+import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
+
+const Main = tw.header`
+  flex justify-between items-center mx-auto
+  max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1240px]
+`;
+
+export const DesktopNavLinks = tw.nav`hidden lg:flex flex-1 justify-between items-center`;
+
+export const MobileNavLinksContainer = tw.nav`flex flex-1 items-center justify-between lg:hidden`;
+
+type NavLinksProps = {
+	$desktop?: boolean;
+};
+export const NavLinks = tw.div<NavLinksProps>`
+	${(p: NavLinksProps) => (p.$desktop ? "inline-block flex items-center" : "inline-block flex flex-col items-center")}
+`;
+
 type NavLinkProps = {
 	$login?: boolean;
-}
-
-export const NavLinks = tw.div`inline-block`;
-
+};
 export const NavLink = tw(Link) <NavLinkProps>`
-  text-lg my-2 lg:text-sm lg:mx-6 lg:my-0
+  text-lg my-2 lg:text-base lg:mx-6 lg:my-0
   font-semibold tracking-wide transition duration-300
-  pb-1 border-b-2 border-transparent hover:border-primary-500 hocus:text-primary-500
+  pb-1 border-y-2 border-transparent hover:border-b-blue-700 hover:text-blue-700
 	${(p: NavLinkProps) => (p.$login ? "lg:ml-12!" : "")}
 `;
 
 export const PrimaryLink = tw(NavLink)`
   lg:mx-0
-  px-8 py-3 rounded bg-purple-800 text-gray-100
-  hocus:bg-primary-700 hocus:text-gray-200 focus:shadow-outline
-  border-b-0
+  bg-gradient-to-r from-[#03228f] to-[#0e73e4] 
+  text-white text-base font-semibold rounded
+  !border-0 px-8 py-3 
+  hover:bg-gradient-to-l hover:text-white focus:shadow-outline
 `;
-
-//@ts-ignore
-// export const MobileNavLinks = motion(styled.div`
-// 	${twm`lg:hidden z-10 fixed top-0 inset-x-0 mx-4 my-6 p-8 border text-center rounded-lg text-gray-900 bg-white`}
-// 	${NavLinks} {
-// 		${twm`flex flex-col items-center`}
-// 	}
-// `);
 
 export const MobileNavLinks = motion(styled.div`
 	lg:hidden z-10 fixed top-0 inset-x-0 mx-4 my-6 p-8 border text-center rounded-lg text-gray-900 bg-white
-	${NavLinks} {
-		flex flex-col items-center
-	}
 `);
 
 export interface ButtonProps extends React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, React.AriaAttributes { }
@@ -48,26 +54,31 @@ export const NavToggle: React.FC<ButtonProps> = tw.button`
   lg:hidden z-20 focus:outline-none hocus:text-primary-500 transition duration-300
 `;
 
+export const Gap = tw.div`w-10`;
+
 const Logo = () => {
 	return (
-		<div className='flex items-center font-black border-b-0 text-2xl! ml-0!'>
-			<img className='w-10 mr-3' src={logo} alt="logo"></img>
-			Shopify
+		<div className='flex items-center font-black border-b-0 !text-3xl ml-0!'>
+			<img className='w-10 mr-5' src={logo} alt="logo"></img>
+			Rive Network
 		</div>
 	);
 }
 
-const Links = () => {
+type LinksParams = {
+	desktop?: boolean
+};
+
+const Links = ({desktop = true}: LinksParams) => {
 	return (
-		<NavLinks key={1}>
+		<NavLinks $desktop={desktop} key={desktop ? 1 : 2}>
+			<NavLink to="/#">Home</NavLink>
 			<NavLink to="/#">About</NavLink>
-			<NavLink to="/#">Blog</NavLink>
-			<NavLink to="/#">Pricing</NavLink>
-			<NavLink to="/#">Contact Us</NavLink>
-			<NavLink to="/#" $login={true}>
-				Login
-			</NavLink>
-			<PrimaryLink to="/#">Sign Up</PrimaryLink>
+			<NavLink to="/#">Services</NavLink>
+			<NavLink to="/#">Team</NavLink>
+			<NavLink to="/#">Contact</NavLink>
+			<Gap />
+			<PrimaryLink to="/#">Sign In</PrimaryLink>
 		</NavLinks>
 	)
 }
@@ -76,22 +87,22 @@ const Header = () => {
 	const { showNavLinks, animation, toggleNavbar } = useAnimatedNavToggler();
 
 	return (
-		<div className='flex justify-between items-center max-w-screen-xl mx-auto'>
-			<div className='hidden lg:flex flex-1 justify-between items-center'>
+		<Main>
+			<DesktopNavLinks>
 				<Logo />
 				<Links />
-			</div>
+			</DesktopNavLinks>
 
-			<div className='flex flex-1 items-center justify-between lg:hidden'>
+			<MobileNavLinksContainer>
 				<Logo />
 				<MobileNavLinks initial={{ x: "150%", display: "none" }} animate={animation}>
-					<Links />
+					<Links desktop={false}/>
 				</MobileNavLinks>
-				{/* <NavToggle onClick={toggleNavbar} className={showNavLinks ? "open" : "closed"}>
-					{/* {showNavLinks ? <CloseIcon tw="w-6 h-6" /> : <MenuIcon tw="w-6 h-6" />} */}
-				{/* </NavToggle> */}
-			</div>
-		</div>
+				<NavToggle onClick={toggleNavbar} className={showNavLinks ? "open" : "closed"}>
+					{showNavLinks ? <CloseIcon className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
+				</NavToggle>
+			</MobileNavLinksContainer>
+		</Main>
 	);
 }
 

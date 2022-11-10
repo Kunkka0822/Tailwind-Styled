@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.opacityAnim {
+  transition: all 0.4s;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  transition-property: all;
+  background-color: transparent;
+}
+
+.opacityAnim:hover {
+  opacity: 0.9;
+}
