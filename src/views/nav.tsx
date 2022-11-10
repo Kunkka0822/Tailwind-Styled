@@ -1,9 +1,5 @@
 import { matchPath } from "react-router-dom";
-// import Home from "./pages/Home";
-import Login from "./pages/Login";
-// import ParcelDetail from "./pages/parcel/detail";
-import Rooms from "./pages/Rooms";
-// import PurchaseToken from "./pages/PurchaseToken";
+import Dashboard from "./pages/Dashboard";
 
 export enum Guard {
     PUBLIC = 0,
@@ -19,23 +15,11 @@ export type NavItemData = {
 
 const NavData: Array<NavItemData> = [
     {
-        anchor: 'Login',
+        anchor: 'Dashboard',
         to: '/',
-        component: Login,
+        component: Dashboard,
         guard: Guard.PUBLIC,
     },
-    {
-        anchor: 'Rooms Page',
-        to: '/rooms',
-        component: Rooms,
-        guard: Guard.PUBLIC,
-    },
-    // {
-    //     anchor: 'HOME, List all parcels',
-    //     to: '/',
-    //     component: Home,
-    //     guard: Guard.PUBLIC,
-    // },
 ];
 
 export default NavData;

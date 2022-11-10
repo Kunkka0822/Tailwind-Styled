@@ -15,7 +15,7 @@ const MainPart = tw.div`md:max-w-[58%] lg:max-w-[50%] xl:max-w-[50%] text-left`;
 const Illustration = tw.div`hidden md:block absolute right-0 2xl:right-[10%] top-[50%] -translate-y-[50%] max-w-[340px] lg:max-w-[470px] xl:max-w-[670px]`;
 
 const Actions = tw.div`text-left py-4`;
-const Button = tw(GradientButton)`p-3.5 px-10`;
+const Button = tw(GradientButton)`!p-3.5 !px-10`;
 
 const Hero = () => {
 	return (

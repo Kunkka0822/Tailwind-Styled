@@ -9,10 +9,10 @@ import useAnimatedNavToggler from "../../../helpers/useAnimatedNavToggler";
 import logo from '../../../assets/images/logo.svg';
 import { ReactComponent as MenuIcon } from "feather-icons/dist/icons/menu.svg";
 import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
+import { Container } from '../basics';
 
 const Main = tw.header`
   flex justify-between items-center mx-auto
-  max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1240px]
 `;
 
 export const DesktopNavLinks = tw.nav`hidden lg:flex flex-1 justify-between items-center`;
@@ -69,7 +69,7 @@ type LinksParams = {
 	desktop?: boolean
 };
 
-const Links = ({desktop = true}: LinksParams) => {
+const Links = ({ desktop = true }: LinksParams) => {
 	return (
 		<NavLinks $desktop={desktop} key={desktop ? 1 : 2}>
 			<NavLink to="/#">Home</NavLink>
@@ -87,22 +87,24 @@ const Header = () => {
 	const { showNavLinks, animation, toggleNavbar } = useAnimatedNavToggler();
 
 	return (
-		<Main>
-			<DesktopNavLinks>
-				<Logo />
-				<Links />
-			</DesktopNavLinks>
+		<Container>
+			<Main>
+				<DesktopNavLinks>
+					<Logo />
+					<Links />
+				</DesktopNavLinks>
 
-			<MobileNavLinksContainer>
-				<Logo />
-				<MobileNavLinks initial={{ x: "150%", display: "none" }} animate={animation}>
-					<Links desktop={false}/>
-				</MobileNavLinks>
-				<NavToggle onClick={toggleNavbar} className={showNavLinks ? "open" : "closed"}>
-					{showNavLinks ? <CloseIcon className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
-				</NavToggle>
-			</MobileNavLinksContainer>
-		</Main>
+				<MobileNavLinksContainer>
+					<Logo />
+					<MobileNavLinks initial={{ x: "150%", display: "none" }} animate={animation}>
+						<Links desktop={false} />
+					</MobileNavLinks>
+					<NavToggle onClick={toggleNavbar} className={showNavLinks ? "open" : "closed"}>
+						{showNavLinks ? <CloseIcon className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
+					</NavToggle>
+				</MobileNavLinksContainer>
+			</Main>
+		</Container>
 	);
 }
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Hero from '../components/hero';
 
-const Login = () => {
+const Dashboard = () => {
 	return (
 		<div className='pt-8'>
 			<Hero/>
@@ -10,4 +10,4 @@ const Login = () => {
 	)
 }
 
-export default Login;
+export default Dashboard;

@@ -1,5 +1,5 @@
 {
-  "name": "ui",
+  "name": "rivastudio",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -39,7 +39,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://mern-api:3080",
+  "proxy": "http://riva-studio:3080",
   "eslintConfig": {
     "extends": [
       "react-app",
