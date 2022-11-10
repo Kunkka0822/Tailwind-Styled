@@ -1,0 +1,110 @@
+[
+	{
+		"id": "1",
+		"name": "Dynamic Razors",
+		"game": "Hold'em",
+		"maxPlayers": 2,
+		"curPlayers": 0,
+		"limit": "Pot Limit",
+		"stakes": "20/200"
+	},
+	{
+		"id": "2",
+		"name": "SF Poker Ball",
+		"game": "Hold'em",
+		"maxPlayers": 2,
+		"curPlayers": 0,
+		"limit": "Pot Limit",
+		"stakes": "20/200"
+	},
+	{
+		"id": "3",
+		"name": "Hello world",
+		"game": "Hold'em",
+		"maxPlayers": 5,
+		"curPlayers": 0,
+		"limit": "Pot Limit",
+		"stakes": "50/100"
+	},
+	{
+		"id": "4",
+		"name": "DSD Admin",
+		"game": "Ohama",
+		"maxPlayers": 12,
+		"curPlayers": 2,
+		"limit": "Pot Limit",
+		"stakes": "10/20"
+	},
+	{
+		"id": "5",
+		"name": "NY Bulldogs",
+		"game": "Ohama",
+		"maxPlayers": 6,
+		"curPlayers": 6,
+		"limit": "Pot Limit",
+		"stakes": "200/200"
+	},
+	{
+		"id": "6",
+		"name": "Poker Group2",
+		"game": "Ohama",
+		"maxPlayers": 8,
+		"curPlayers": 5,
+		"limit": "Pot Limit",
+		"stakes": "100/150"
+	},
+	{
+		"id": "1",
+		"name": "Dynamic Razors",
+		"game": "Hold'em",
+		"maxPlayers": 2,
+		"curPlayers": 0,
+		"limit": "Pot Limit",
+		"stakes": "20/200"
+	},
+	{
+		"id": "2",
+		"name": "SF Poker Ball",
+		"game": "Hold'em",
+		"maxPlayers": 2,
+		"curPlayers": 0,
+		"limit": "Pot Limit",
+		"stakes": "20/200"
+	},
+	{
+		"id": "3",
+		"name": "Hello world",
+		"game": "Hold'em",
+		"maxPlayers": 5,
+		"curPlayers": 0,
+		"limit": "Pot Limit",
+		"stakes": "50/100"
+	},
+	{
+		"id": "4",
+		"name": "DSD Admin",
+		"game": "Ohama",
+		"maxPlayers": 12,
+		"curPlayers": 2,
+		"limit": "Pot Limit",
+		"stakes": "10/20"
+	},
+	{
+		"id": "5",
+		"name": "NY Bulldogs",
+		"game": "Ohama",
+		"maxPlayers": 6,
+		"curPlayers": 6,
+		"limit": "Pot Limit",
+		"stakes": "200/200"
+	},
+	{
+		"id": "6",
+		"name": "Poker Group2",
+		"game": "Ohama",
+		"maxPlayers": 8,
+		"curPlayers": 5,
+		"limit": "Pot Limit",
+		"stakes": "100/150"
+	}
+]
