@@ -10,6 +10,7 @@ import logo from '../../../assets/images/logo.svg';
 import { ReactComponent as MenuIcon } from "feather-icons/dist/icons/menu.svg";
 import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
 import { Container } from '../basics';
+import { useTranslation } from 'react-i18next';
 
 const Main = tw.header`
   flex justify-between items-center mx-auto
@@ -60,7 +61,7 @@ const Logo = () => {
 	return (
 		<div className='flex items-center font-black border-b-0 !text-3xl ml-0!'>
 			<img className='w-10 mr-5' src={logo} alt="logo"></img>
-			Rive Network
+			RIVA STUDIO
 		</div>
 	);
 }
@@ -70,15 +71,16 @@ type LinksParams = {
 };
 
 const Links = ({ desktop = true }: LinksParams) => {
+	const {t} = useTranslation();
 	return (
 		<NavLinks $desktop={desktop} key={desktop ? 1 : 2}>
-			<NavLink to="/#">Home</NavLink>
-			<NavLink to="/#">About</NavLink>
-			<NavLink to="/#">Services</NavLink>
-			<NavLink to="/#">Team</NavLink>
-			<NavLink to="/#">Contact</NavLink>
+			<NavLink to="/#">{t('home')}</NavLink>
+			<NavLink to="/#">{t('about')}</NavLink>
+			<NavLink to="/#">{t('services')}</NavLink>
+			<NavLink to="/#">{t('team')}</NavLink>
+			<NavLink to="/#">{t('contact')}</NavLink>
 			<Gap />
-			<PrimaryLink to="/#">Sign In</PrimaryLink>
+			<PrimaryLink to="/#">{t('get_started')}</PrimaryLink>
 		</NavLinks>
 	)
 }

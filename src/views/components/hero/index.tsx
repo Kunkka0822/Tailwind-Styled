@@ -9,6 +9,7 @@ import {
 	ParagraphSmall,
 	GradientButton
 } from '../basics';
+import { useTranslation } from 'react-i18next';
 
 const SubContainer = tw.div`flex mx-auto pt-[80px] lg:pt-[170px] lg:pb-[200px]`;
 const MainPart = tw.div`md:max-w-[58%] lg:max-w-[50%] xl:max-w-[50%] text-left`;
@@ -18,6 +19,7 @@ const Actions = tw.div`text-left py-4`;
 const Button = tw(GradientButton)`!p-3.5 !px-10`;
 
 const Hero = () => {
+	const {t} = useTranslation();
 	return (
 		<>
 			<Header />
@@ -26,17 +28,17 @@ const Hero = () => {
 					<SubContainer>
 						<MainPart>
 							<ParagraphSmall className='text-[#f24c1a] font-[600] my-2 text-base'>
-								TECHNOLOGY & IT SOLUTIONS
+								{t('technology_it_solutions')}
 							</ParagraphSmall>
 							<Heading>
-								Digital <span className='text-[#0073ff]'>Technology,</span> <br />
-								<span className='text-[#f24c1a]'>It Solutions</span> & Services Around the World
+								{t('digital')} <span className='text-[#0073ff]'>{t('technology')},</span> <br />
+								<span className='text-[#f24c1a]'>{t('it_solutions')}</span> & {t('services_around_the_world')}
 							</Heading>
 							<Paragraph>
-								We are leading technology solutions proving company all over the world doing over 40 years.
+								{t('_label')}
 							</Paragraph>
 							<Actions>
-								<Button>GET STARTED</Button>
+								<Button>{t('get_started')}</Button>
 							</Actions>
 						</MainPart>
 					</SubContainer>
