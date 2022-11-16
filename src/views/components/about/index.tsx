@@ -31,7 +31,7 @@ const Title = tw.div`text-[36px] font-[700] text-[#102B3E] mb-[5px] pb-[20px]`;
 const Desc = tw.div`lg:pr-[125px] text-[16px] text-[#454545]`;
 
 const ProgressBarMainTitle = tw.div`flex justify-between`;
-const ProgressBarMain = tw.div`w-full bg-gray-200 rounded-full h-1.5 dark:bg-gray-700 mt-[10px] mb-[24px]`;
+const ProgressBarMain = tw.div`w-full bg-gray-200 rounded-full h-1.5 mt-[10px] mb-[24px]`;
 export type ProgressBarMainParams = {
 	color?: string;
 	percent?: number;
