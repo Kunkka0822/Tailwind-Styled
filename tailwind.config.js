@@ -24,7 +24,10 @@ module.exports = {
       },
       animation: {
         'idle': 'idle 2s ease-out infinite'
-      }
+      },
+      fontFamily: {
+        livvic: ["Livvic", "sans-serif",],
+      },
     },
   },
   plugins: [require('@tailwindcss/forms')],

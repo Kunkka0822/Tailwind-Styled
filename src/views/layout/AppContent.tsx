@@ -5,7 +5,7 @@ import NavData from "../nav";
 
 const AppContent = () => {
   return (
-    <div className="flex min-h-screen">
+    <div className="flex min-h-screen font-livvic">
       {/* <Navbar /> */}
       <main className="flex-1 overflow-hidden">
         <Routes>

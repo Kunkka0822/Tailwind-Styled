@@ -2,6 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Livvic";
+  src: url("../public/fonts/Livvic-Thin.ttf");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "Livvic";
+  src: url("../public/fonts/Livvic-ExtraLight.ttf");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "Livvic";
+  src: url("../public/fonts/Livvic-Light.ttf");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Livvic";
+  src: url("../public/fonts/Livvic-Regular.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Livvic";
+  src: url("../public/fonts/Livvic-Medium.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Livvic";
+  src: url("../public/fonts/Livvic-SemiBold.ttf");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Livvic";
+  src: url("../public/fonts/Livvic-Bold.ttf");
+  font-weight: 700;
+}
+/* 
+@font-face {
+  font-family: "Livvic";
+  src: url("../public/fonts/Livvic-ExtraBold.ttf");
+  font-weight: 800;
+} */
+
+@font-face {
+  font-family: "Livvic";
+  src: url("../public/fonts/Livvic-Black.ttf");
+  font-weight: 900;
+}
+
 .opacityAnim {
   transition: all 0.4s;
   transition-duration: 0.4s;
