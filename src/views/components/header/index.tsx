@@ -61,8 +61,8 @@ export const Gap = tw.div`w-10`;
 const Logo = () => {
 	return (
 		<div className='flex items-center font-black border-b-0 !text-3xl ml-0!'>
-			{/* <img className='w-10 mr-5' src={logo} alt="logo"></img> */}
-			FAMILY
+			<img className='w-10 mr-5' src={logo} alt="logo"></img>
+			RIVA STUDIO
 		</div>
 	);
 }
