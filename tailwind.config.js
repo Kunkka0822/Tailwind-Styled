@@ -12,6 +12,9 @@ module.exports = {
       'xm': '576px'
     },
     extend: {
+      backgroundImage: {
+        'feaure-back': "url('./assets/images/feature.jpg')",
+      },
       keyframes: {
         'idle': {
           '0%, 100%': {

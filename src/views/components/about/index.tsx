@@ -32,19 +32,21 @@ const Desc = tw.div`lg:pr-[125px] text-[16px] text-[#454545]`;
 
 const ProgressBarMainTitle = tw.div`flex justify-between`;
 const ProgressBarMain = tw.div`w-full bg-gray-200 rounded-full h-1.5 mt-[10px] mb-[24px]`;
-export type ProgressBarMainParams = {
-	color?: string;
-	percent?: number;
-}
-const ProgressBarMainPercent = tw.div<ProgressBarMainParams>`
-	bg-[#FF571C] h-1.5 rounded-full w-[92%]
-	${(props: ProgressBarMainParams) => ((props?.color ? `bg-[${props?.color}]` : '') + ' ' + (props?.percent ? `w-[${props.percent}%]` : ''))}
-`;
+// const ProgressBarMainPercent = tw.div<ProgressBarMainParams>`
+// 	bg-[#FF571C] h-1.5 rounded-full w-[92%]
+// 	${(props: ProgressBarMainParams) => ((props?.color ? `bg-[${props?.color}]` : '') + ' ' + (props?.percent ? `w-[${props.percent}%]` : ''))}
+// `;
 
-export interface ProgressBarParams extends ProgressBarMainParams {
+const ProgressBarMainPercent = tw.div`bg-[#FF571C] h-1.5 rounded-full w-[92%]`;
+const ProgressBarMainPercent1 = tw(ProgressBarMainPercent)`bg-[#7E06E4] w-[80%]`;
+const ProgressBarMainPercent2 = tw(ProgressBarMainPercent)`bg-[#0073FF] w-[95%]`;
+
+export interface ProgressBarParams {
 	title?: string;
+	percent?: number;
+	id?: number;
 }
-const ProgressBar = ({title, color = "#FF571C", percent = 92}: ProgressBarParams) => {
+const ProgressBar = ({title, percent = 92, id = 0}: ProgressBarParams) => {
 	return (
 		<>
 			<ProgressBarMainTitle>
@@ -52,7 +54,9 @@ const ProgressBar = ({title, color = "#FF571C", percent = 92}: ProgressBarParams
 				<div className='pr-[40px]'>{percent}%</div>
 			</ProgressBarMainTitle>
 			<ProgressBarMain>
-				<ProgressBarMainPercent color={color} percent={percent}/>
+				{id === 0 && <ProgressBarMainPercent />}
+				{id === 1 && <ProgressBarMainPercent1 />}
+				{id === 2 && <ProgressBarMainPercent2 />}
 			</ProgressBarMain>
 		</>
 	);
@@ -61,7 +65,7 @@ const ProgressBar = ({title, color = "#FF571C", percent = 92}: ProgressBarParams
 const About = () => {
 	const {t} = useTranslation();
 	return (
-		<div className='relative pt-[170px] pb-[185px] lg:pb-[230px]'>
+		<div className='relative pt-[150px] pb-[80px] '>
 			<Container>
 				<TwoColumn>
 					<LeftColumn>
@@ -109,8 +113,8 @@ const About = () => {
 
 						<div className='lg:pr-[120px]'>
 							<ProgressBar title={t('analystics') as string} />
-							<ProgressBar title={t('development') as string} color='#7E06E4' percent={80} />
-							<ProgressBar title={t('solutions') as string} color='#0073FF' percent={95} />
+							<ProgressBar title={t('development') as string} id={1} percent={80} />
+							<ProgressBar title={t('solutions') as string} id={2} percent={95} />
 						</div>
 					</RightColumn>
 				</TwoColumn>

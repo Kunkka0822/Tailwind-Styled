@@ -24,7 +24,7 @@ export const ParagraphSmall = tw(Paragraph)`
 export const Container = tw.div`
   w-full mx-auto
   max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px] 2xl:max-w-[1240px]
-  px-5 md:px-0
+  px-5 md:px-0 text-center
 `;
 
 export const GradientButton = tw.button`

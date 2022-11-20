@@ -68,3 +68,9 @@
 .opacityAnim:hover {
   opacity: 0.9;
 }
+
+body {
+  font-size: 16px;
+  font-weight: 400;
+  color: #454545;
+}

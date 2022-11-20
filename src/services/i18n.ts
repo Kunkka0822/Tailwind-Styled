@@ -29,6 +29,20 @@ const resources = {
       feature2: 'Regular Updates & Bug fixes',
       feature3: 'Creative Product Analitic',
       feature4: 'High-Rated Quick Support',
+
+      feat1: 'Happy Clients',
+      feat2: 'Projects Done',
+      feat3: 'Have Companies',
+      feat4: 'Team Members',
+      service_subtitle: 'SERVICES',
+      service_title: 'Our Featured Services',
+      service1: 'IT Management',
+      service2: 'Data Security',
+      service3: 'IT Counsulting',
+      service4: 'Graphic Design',
+      service5: 'IT Design',
+      service6: 'Business Consulting',
+      service_desc: 'We denounce with righteous indignation & dislike men who are so beguiled to righteous demorlized.',
     },
   },
   tr: {
@@ -58,6 +72,20 @@ const resources = {
       feature2: 'Düzenli Güncellemeler ve Hata düzeltmeleri',
       feature3: 'Yaratıcı Ürün Analitiği',
       feature4: 'Yüksek Puanlı Hızlı Destek',
+
+      feat1: 'Mutlu Müşteriler',
+      feat2: 'Tamamlanan Projeler',
+      feat3: 'Projeler',
+      feat4: 'Takım üyeleri',
+      service_subtitle: 'Beraber Çalıştığımızda Neler Yapabiliriz?',
+      service_title: 'Dijital dünya günümüzün olmazsa olmazı. Peki kaliteli bir dijital dönüşüm firmanıza neler katabilir?',
+      service1: 'Masaüstü uygulamaları',
+      service2: 'Altyapı çözümleri',
+      service3: 'Mobil uygulamaları',
+      service4: 'Web Yazılım',
+      service5: 'Veri güvenliği',
+      service6: 'Seo Yönetimi',
+      service_desc: 'Haklı bir öfkeyle kınıyoruz ve erdemlilerin demoralize edilmesine bu kadar ayartılmış erkeklerden hoşlanmıyoruz.',
     }
   }
 };
