@@ -37,21 +37,26 @@ const ProgressBarMain = tw.div`w-full bg-gray-200 rounded-full h-1.5 mt-[10px] m
 // 	${(props: ProgressBarMainParams) => ((props?.color ? `bg-[${props?.color}]` : '') + ' ' + (props?.percent ? `w-[${props.percent}%]` : ''))}
 // `;
 
-const ProgressBarMainPercent = tw.div`bg-[#FF571C] h-1.5 rounded-full w-[92%]`;
-const ProgressBarMainPercent1 = tw(ProgressBarMainPercent)`bg-[#7E06E4] w-[80%]`;
-const ProgressBarMainPercent2 = tw(ProgressBarMainPercent)`bg-[#0073FF] w-[95%]`;
+const ProgressBarMainPercent = tw.div`bg-[#FF571C] h-1.5 rounded-full w-[100%]`;
+const ProgressBarMainPercent1 = tw(ProgressBarMainPercent)`bg-[#7E06E4] w-[100%]`;
+const ProgressBarMainPercent2 = tw(ProgressBarMainPercent)`bg-[#0073FF] w-[100%]`;
+const ProgressBarSubTitle = tw.div`mr-[40px] text-white font-[500] px-[5px] bg-[#FF571C] rounded-[4px]`;
+const ProgressBarSubTitle1 = tw(ProgressBarSubTitle)`bg-[#7E06E4]`;
+const ProgressBarSubTitle2 = tw(ProgressBarSubTitle)`bg-[#0073FF]`;
 
 export interface ProgressBarParams {
 	title?: string;
 	percent?: number;
 	id?: number;
 }
-const ProgressBar = ({title, percent = 92, id = 0}: ProgressBarParams) => {
+const ProgressBar = ({title, percent = 100, id = 0}: ProgressBarParams) => {
 	return (
 		<>
 			<ProgressBarMainTitle>
 				<div>{title}</div>
-				<div className='pr-[40px]'>{percent}%</div>
+				{id === 0 && <ProgressBarSubTitle>{percent}%</ProgressBarSubTitle>}
+				{id === 1 && <ProgressBarSubTitle1>{percent}%</ProgressBarSubTitle1>}
+				{id === 2 && <ProgressBarSubTitle2>{percent}%</ProgressBarSubTitle2>}
 			</ProgressBarMainTitle>
 			<ProgressBarMain>
 				{id === 0 && <ProgressBarMainPercent />}
@@ -113,8 +118,8 @@ const About = () => {
 
 						<div className='lg:pr-[120px]'>
 							<ProgressBar title={t('analystics') as string} />
-							<ProgressBar title={t('development') as string} id={1} percent={80} />
-							<ProgressBar title={t('solutions') as string} id={2} percent={95} />
+							<ProgressBar title={t('development') as string} id={1} percent={100} />
+							<ProgressBar title={t('solutions') as string} id={2} percent={100} />
 						</div>
 					</RightColumn>
 				</TwoColumn>
